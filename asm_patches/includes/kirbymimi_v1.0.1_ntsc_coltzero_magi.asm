@@ -1,0 +1,1032 @@
+; v1.0.1 by KirbyMIMI NTSC translation by Colt Zero updated by magi 10/3/21
+;	Assembly		                                                AR Code
+.open "sys/main.dol"
+.org 0x80007ABC                                            ;  04007ABC
+  nop                                                      ;v 60000000
+.org 0x80007AD0                                            ;  04007AD0
+  li      r4,0x1                                           ;v 38800001
+.org 0x80007AE4                                            ;  04007AE4
+  stw     r0,0x4(r3)                                       ;v 90030004
+.org 0x80008F34                                            ;  04008F34
+  blr                                                      ;v 4E800020
+.org 0x8000AFA0                                            ;  0400AFA0
+  bl      JFWDisplay__beginRender                          ;v 4824A92D
+.org 0x8000AFA4                                            ;  0400AFA4
+  lis     r3,-0x7FFD                                       ;v 3C608003
+.org 0x8000AFA8                                            ;  0400AFA8
+  ori     r4,r3,0xE318                                     ;v 6064E318
+.org 0x8000AFAC                                            ;  0400AFAC
+  ori     r3,r3,0xE338                                     ;v 6063E338
+.org 0x8000AFB0                                            ;  0400AFB0
+  bl      f_pc_draw__fpcDw_Handler                         ;v 4803551D
+.org 0x8000B0C4                                            ;  0400B0C4
+  bl      TRK_MINNOW_DOLPHIN__TRKNubMainLoop_B0            ;v 48325ED1
+.org 0x8000BBF8                                            ;  0400BBF8
+  lwz     r3,-0x6D50(r13)                                  ;v 806D92B0
+.org 0x8000BBFC                                            ;  0400BBFC
+  nop                                                      ;v 60000000
+.org 0x8000BC00                                            ;  0400BC00
+  bl      JFWDisplay__endRender                            ;v 48249EB9
+.org 0x8000BC1C                                            ;  0400BC1C
+  bl      TRK_MINNOW_DOLPHIN__TRKInitializeNub_44          ;v 48325679
+.org 0x8000C7C0                                            ;  0400C7C0
+  nop                                                      ;v 60000000
+.org 0x8000C848                                            ;  0400C848
+  lis     r0,0x6C                                          ;v 3C00006C
+.org 0x8000C9EC                                            ;  0400C9EC
+  lis     r3,0x37                                          ;v 3C600037
+.org 0x80025260                                            ;  04025260
+  bl      TRK_MINNOW_DOLPHIN__TRKMessageSend_40            ;v 4830C165
+.org 0x800252BC                                            ;  040252BC
+  b       TRK_MINNOW_DOLPHIN__TRKInitializeNub_A4          ;v 4830C038
+.org 0x800253C0                                            ;  040253C0
+  b       TRK_MINNOW_DOLPHIN__TRKInitializeNub_10C         ;v 4830BF9C
+.org 0x8003ED60                                            ;  0403ED60
+  nop                                                      ;v 60000000
+.org 0x80041E10                                            ;  04041E10
+  bl      TRK_MINNOW_DOLPHIN__TRKGetNextEvent_78           ;v 482EF361
+.org 0x80041E94                                            ;  04041E94
+  li      r31,0x0                                          ;v 3BE00000
+.org 0x80041E98                                            ;  04041E98
+  addi    r4,r4,0x4                                        ;v 38840004
+.org 0x80041E9C                                            ;  04041E9C
+  stw     r4,0x4(r3)                                       ;v 90830004
+.org 0x80041EA0                                            ;  04041EA0
+  li      r4,0x0                                           ;v 38800000
+.org 0x80041EA4                                            ;  04041EA4
+  li      r5,0x0                                           ;v 38A00000
+.org 0x80041EA8                                            ;  04041EA8
+  bl      d_stage__dStage_cameraCreate                     ;v 4BFFF7F5
+.org 0x80041EAC                                            ;  04041EAC
+  cmpwi   r31,0x0                                          ;v 2C1F0000
+.org 0x80041EB0                                            ;  04041EB0
+  li      r31,0x1                                          ;v 3BE00001
+.org 0x80041EB4                                            ;  04041EB4
+  beq     d_stage__dStage_cameraInit_1C                    ;v 4182FFEC
+.org 0x80041EB8                                            ;  04041EB8
+  lwz     r31,0xC(r1)                                      ;v 83E1000C
+.org 0x80041EBC                                            ;  04041EBC
+  addi    r1,r1,0x10                                       ;v 38210010
+.org 0x80041EC0                                            ;  04041EC0
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x80041EC4                                            ;  04041EC4
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x80041EC8                                            ;  04041EC8
+  blr                                                      ;v 4E800020
+.org 0x800738DC                                            ;  040738DC
+  bl      TRK_MINNOW_DOLPHIN__TRKGetNextEvent_64           ;v 482BD881
+.org 0x80074094                                            ;  04074094
+  bl      TRK_MINNOW_DOLPHIN__TRKGetNextEvent_1C           ;v 482BD081
+.org 0x80074104                                            ;  04074104
+  b       TRK_MINNOW_DOLPHIN__TRKInitializeNub_78          ;v 482BD1C4
+.org 0x80074110                                            ;  04074110
+  b       TRK_MINNOW_DOLPHIN__TRKInitializeNub_88          ;v 482BD1C8
+.org 0x80084EBC                                            ;  04084EBC
+  nop                                                      ;v 60000000
+.org 0x8009D2F4                                            ;  0409D2F4
+  bl      TRK_MINNOW_DOLPHIN__TRKInitializeEventQueue_8    ;v 48293EC1
+.org 0x8009E2CC                                            ;  0409E2CC
+  mr      r6,r3                                            ;v 7C661B78
+.org 0x8009E2D0                                            ;  0409E2D0
+  li      r3,0x0                                           ;v 38600000
+.org 0x8009E2D4                                            ;  0409E2D4
+  lwz     r5,0x10(r6)                                      ;v 80A60010
+.org 0x8009E2D8                                            ;  0409E2D8
+  lis     r0,-0x7FC8                                       ;v 3C008038
+.org 0x8009E2DC                                            ;  0409E2DC
+  ori     r0,r0,0xFD8C                                     ;v 6000FD8C
+.org 0x8009E2E0                                            ;  0409E2E0
+  cmpw    r0,r5                                            ;v 7C002800
+.org 0x8009E2E4                                            ;  0409E2E4
+  beqlr                                                    ;v 4D820020
+.org 0x8009E2E8                                            ;  0409E2E8
+  mr      r3,r4                                            ;v 7C832378
+.org 0x8009E2EC                                            ;  0409E2EC
+  mr      r4,r6                                            ;v 7CC43378
+.org 0x8009E2F0                                            ;  0409E2F0
+  b       dAttention_c__SelectAttention                    ;v 4800004C
+.org 0x8009EE34                                            ;  0409EE34
+  lwz     r4,0x190(r3)                                     ;v 80830190
+.org 0x8009EE68                                            ;  0409EE68
+  lwz     r4,0x190(r3)                                     ;v 80830190
+.org 0x8009EFC8                                            ;  0409EFC8
+  lwz     r3,0x190(r31)                                    ;v 807F0190
+.org 0x8009F2CC                                            ;  0409F2CC
+  lwz     r3,0x190(r31)                                    ;v 807F0190
+.org 0x8009F33C                                            ;  0409F33C
+  lwz     r3,0x190(r31)                                    ;v 807F0190
+.org 0x800F5000                                            ;  040F5000
+  lhz     r31,0x12(r29)                                    ;v A3FD0012
+.org 0x800F501C                                            ;  040F501C
+  cmplwi  r31,0xFD8C                                       ;v 281FFD8C
+.org 0x8010292C                                            ;  0410292C
+  nop                                                      ;v 60000000
+.org 0x80107890                                            ;  04107890
+  bl      TRK_MINNOW_DOLPHIN__TRKMessageSend_124           ;v 48229C19
+.org 0x80107910                                            ;  04107910
+  bl      TRK_MINNOW_DOLPHIN__TRKMessageSend_124           ;v 48229B99
+.org 0x80107A14                                            ;  04107A14
+  bl      TRK_MINNOW_DOLPHIN__TRKMessageSend_124           ;v 48229A95
+.org 0x80107A94                                            ;  04107A94
+  bl      TRK_MINNOW_DOLPHIN__TRKMessageSend_124           ;v 48229A15
+.org 0x80108248                                            ;  04108248
+  nop                                                      ;v 60000000
+.org 0x8010E3D4                                            ;  0410E3D4
+  nop                                                      ;v 60000000
+.org 0x80110008                                            ;  04110008
+  b       daPy_lk_c__changeWaitProc_64                     ;v 4800000C
+.org 0x80110738                                            ;  04110738
+  nop                                                      ;v 60000000
+.org 0x8011F9FC                                            ;  0411F9FC
+  b       daPy_lk_c__setStickData_50                       ;v 48000014
+.org 0x8011FB54                                            ;  0411FB54
+  lwz     r3,0x4C28(r29)                                   ;v 807D4C28
+.org 0x8011FB88                                            ;  0411FB88
+  lwz     r3,0x4C28(r29)                                   ;v 807D4C28
+.org 0x8011FBB4                                            ;  0411FBB4
+  bl      TRK_MINNOW_DOLPHIN__TRKDestructEvent_20          ;v 48211449
+.org 0x8011FBD8                                            ;  0411FBD8
+  lwz     r5,0x4C28(r29)                                   ;v 80BD4C28
+.org 0x8011FC08                                            ;  0411FC08
+  lwz     r4,0x4C28(r29)                                   ;v 809D4C28
+.org 0x8011FCEC                                            ;  0411FCEC
+  lwz     r3,0x4C28(r29)                                   ;v 807D4C28
+.org 0x8011FD0C                                            ;  0411FD0C
+  lwz     r3,0x4C28(r29)                                   ;v 807D4C28
+.org 0x8011FD34                                            ;  0411FD34
+  lwz     r5,0x4C28(r29)                                   ;v 80BD4C28
+.org 0x8011FDE0                                            ;  0411FDE0
+  lwz     r3,0x4C28(r29)                                   ;v 807D4C28
+.org 0x801219C4                                            ;  041219C4
+  b       daPy_lk_c__execute_1A4                           ;v 48000050
+.org 0x80121B60                                            ;  04121B60
+  nop                                                      ;v 60000000
+.org 0x80121B68                                            ;  04121B68
+  nop                                                      ;v 60000000
+.org 0x80121B70                                            ;  04121B70
+  nop                                                      ;v 60000000
+.org 0x80121B78                                            ;  04121B78
+  nop                                                      ;v 60000000
+.org 0x80121B84                                            ;  04121B84
+  nop                                                      ;v 60000000
+.org 0x80121B8C                                            ;  04121B8C
+  nop                                                      ;v 60000000
+.org 0x80121B94                                            ;  04121B94
+  nop                                                      ;v 60000000
+.org 0x80121BA0                                            ;  04121BA0
+  nop                                                      ;v 60000000
+.org 0x80121BA8                                            ;  04121BA8
+  nop                                                      ;v 60000000
+.org 0x80122BAC                                            ;  04122BAC
+  b       daPy_lk_c__execute_1350                          ;v 48000014
+.org 0x80122D4C                                            ;  04122D4C
+  b       TRK_MINNOW_DOLPHIN__TRKMessageSend_154           ;v 4820E78C
+.org 0x8012525C                                            ;  0412525C
+  bl      TRK_MINNOW_DOLPHIN__TRKInitializeEventQueue_38   ;v 4820BF89
+.org 0x80125CE4                                            ;  04125CE4
+  bl      TRK_MINNOW_DOLPHIN__TRKGetNextEvent_4C           ;v 4820B461
+.org 0x80125CE8                                            ;  04125CE8
+  nop                                                      ;v 60000000
+.org 0x80126EFC                                            ;  04126EFC
+  b       TRK_MINNOW_DOLPHIN__TRKNubMainLoop               ;v 48209FE8
+.org 0x8012E8C4                                            ;  0412E8C4
+  bl      TRK_MINNOW_DOLPHIN__TRKInitializeNub_90          ;v 48202A1D
+.org 0x8013D008                                            ;  0413D008
+  nop                                                      ;v 60000000
+.org 0x801617D8                                            ;  041617D8
+  bl      TRK_MINNOW_DOLPHIN__TRKNubMainLoop_D0            ;v 481CF7DD
+.org 0x801618B4                                            ;  041618B4
+  b       TRK_MINNOW_DOLPHIN__TRKNubMainLoop_68            ;v 481CF698
+.org 0x801623F4                                            ;  041623F4
+  lwz     r3,0x9D4(r31)                                    ;v 807F09D4
+.org 0x80162410                                            ;  04162410
+  lwz     r4,0x9D4(r31)                                    ;v 809F09D4
+.org 0x80162478                                            ;  04162478
+  lwz     r3,0x9D4(r31)                                    ;v 807F09D4
+.org 0x801624C8                                            ;  041624C8
+  lwz     r4,0x9D4(r31)                                    ;v 809F09D4
+.org 0x80162570                                            ;  04162570
+  lwz     r4,0x9D4(r31)                                    ;v 809F09D4
+.org 0x80162620                                            ;  04162620
+  lwz     r0,0x9D4(r31)                                    ;v 801F09D4
+.org 0x80163328                                            ;  04163328
+  bl      TRK_MINNOW_DOLPHIN__TRKTerminateNub_8            ;v 481CDF0D
+.org 0x80163688                                            ;  04163688
+  bl      TRK_MINNOW_DOLPHIN__TRKInitializeNub_4           ;v 481CDBCD
+.org 0x801641B0                                            ;  041641B0
+  bl      TRK_MINNOW_DOLPHIN__TRKInitializeNub_24          ;v 481CD0C5
+.org 0x80194C08                                            ;  04194C08
+  bl      TRK_MINNOW_DOLPHIN__TRKGetNextEvent_88           ;v 4819C579
+.org 0x801E5B24                                            ;  041E5B24
+  bl      dMesg_tSequenceProcessor__dMesg_tSequenceProcessor_destructor;v 48000095
+.org 0x801E5B44                                            ;  041E5B44
+  bl      dMesg_tRenderingProcessor__dMesg_tRenderingProcessor_destructor;v 48000015
+.org 0x801E7100                                            ;  041E7100
+  bl      JMessage__TParse__TParse_destructor              ;v 480B8D91
+.org 0x801EC8FC                                            ;  041EC8FC
+  bl      d_message_paper__dMsg3_arrowMove_20              ;v 48000115
+.org 0x802009B0                                            ;  042009B0
+  nop                                                      ;v 60000000
+.org 0x802009BC                                            ;  042009BC
+  nop                                                      ;v 60000000
+.org 0x80234FA8                                            ;  04234FA8
+  bl      TRK_MINNOW_DOLPHIN__TRKPostEvent_D0              ;v 480FC141
+.org 0x80235074                                            ;  04235074
+  bl      TRK_MINNOW_DOLPHIN__TRKPostEvent_A0              ;v 480FC045
+.org 0x80235090                                            ;  04235090
+  bl      TRK_MINNOW_DOLPHIN__TRKPostEvent_58              ;v 480FBFE1
+.org 0x80245B10                                            ;  04245B10
+  b       cXyz__normalize_68                               ;v 48000034
+.org 0x803270C4                                            ;  043270C4
+  b       TRK_MINNOW_DOLPHIN__TRKMessageSend_1A0           ;v 4800A460
+.org 0x80330EE4                                            ;  04330EE4
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80330EE8                                            ;  04330EE8
+  lbz     r6,0x1F00(r4)                                    ;v 88C41F00
+.org 0x80330EEC                                            ;  04330EEC
+  lis     r5,-0x7FC6                                       ;v 3CA0803A
+.org 0x80330EF0                                            ;  04330EF0
+  ori     r5,r5,0x4DF0                                     ;v 60A54DF0
+.org 0x80330EF4                                            ;  04330EF4
+  cmpwi   r6,0x1                                           ;v 2C060001
+.org 0x80330EF8                                            ;  04330EF8
+  bne     TRK_MINNOW_DOLPHIN__TRKNubMainLoop_28            ;v 40820014
+.org 0x80330EFC                                            ;  04330EFC
+  stw     r5,0x4C28(r3)                                    ;v 90A34C28
+.org 0x80330F00                                            ;  04330F00
+  li      r0,0x0                                           ;v 38000000
+.org 0x80330F04                                            ;  04330F04
+  stb     r0,0x1F00(r4)                                    ;v 98041F00
+.org 0x80330F08                                            ;  04330F08
+  blr                                                      ;v 4E800020
+.org 0x80330F0C                                            ;  04330F0C
+  stw     r3,0x3EA0(r4)                                    ;v 90643EA0
+.org 0x80330F10                                            ;  04330F10
+  addi    r5,r5,0x3C                                       ;v 38A5003C
+.org 0x80330F14                                            ;  04330F14
+  stw     r5,0x4C28(r3)                                    ;v 90A34C28
+.org 0x80330F18                                            ;  04330F18
+  li      r0,0x1                                           ;v 38000001
+.org 0x80330F1C                                            ;  04330F1C
+  stb     r0,0x1F00(r4)                                    ;v 98041F00
+.org 0x80330F20                                            ;  04330F20
+  blr                                                      ;v 4E800020
+.org 0x80330F24                                            ;  04330F24
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80330F28                                            ;  04330F28
+  lbz     r0,0x1F00(r4)                                    ;v 88041F00
+.org 0x80330F2C                                            ;  04330F2C
+  cmpwi   r0,0x1                                           ;v 2C000001
+.org 0x80330F30                                            ;  04330F30
+  bne     TRK_MINNOW_DOLPHIN__TRKNubMainLoop_5C            ;v 40820010
+.org 0x80330F34                                            ;  04330F34
+  li      r0,0x2                                           ;v 38000002
+.org 0x80330F38                                            ;  04330F38
+  stb     r0,0x1F00(r4)                                    ;v 98041F00
+.org 0x80330F3C                                            ;  04330F3C
+  b       m_Do_graphic__mDoGph_Painter_78                  ;v 4BCDA068
+.org 0x80330F40                                            ;  04330F40
+  li      r3,0x1                                           ;v 38600001
+.org 0x80330F44                                            ;  04330F44
+  stb     r3,0x1F00(r4)                                    ;v 98641F00
+.org 0x80330F48                                            ;  04330F48
+  blr                                                      ;v 4E800020
+.org 0x80330F4C                                            ;  04330F4C
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80330F50                                            ;  04330F50
+  lbz     r6,0x1F00(r4)                                    ;v 88C41F00
+.org 0x80330F54                                            ;  04330F54
+  lis     r5,-0x7FC6                                       ;v 3CA0803A
+.org 0x80330F58                                            ;  04330F58
+  ori     r5,r5,0x4DF0                                     ;v 60A54DF0
+.org 0x80330F5C                                            ;  04330F5C
+  cmpwi   r6,0x1                                           ;v 2C060001
+.org 0x80330F60                                            ;  04330F60
+  bne     TRK_MINNOW_DOLPHIN__TRKNubMainLoop_90            ;v 40820014
+.org 0x80330F64                                            ;  04330F64
+  stw     r5,0x9D4(r3)                                     ;v 90A309D4
+.org 0x80330F68                                            ;  04330F68
+  li      r0,0x0                                           ;v 38000000
+.org 0x80330F6C                                            ;  04330F6C
+  stb     r0,0x1F00(r4)                                    ;v 98041F00
+.org 0x80330F70                                            ;  04330F70
+  blr                                                      ;v 4E800020
+.org 0x80330F74                                            ;  04330F74
+  nop                                                      ;v 60000000
+.org 0x80330F78                                            ;  04330F78
+  addi    r5,r5,0x3C                                       ;v 38A5003C
+.org 0x80330F7C                                            ;  04330F7C
+  stw     r5,0x9D4(r3)                                     ;v 90A309D4
+.org 0x80330F80                                            ;  04330F80
+  li      r0,0x1                                           ;v 38000001
+.org 0x80330F84                                            ;  04330F84
+  stb     r0,0x1F00(r4)                                    ;v 98041F00
+.org 0x80330F88                                            ;  04330F88
+  lwz     r4,0x3EA0(r4)                                    ;v 80843EA0
+.org 0x80330F8C                                            ;  04330F8C
+  stw     r4,0x128(r3)                                     ;v 90830128
+.org 0x80330F90                                            ;  04330F90
+  blr                                                      ;v 4E800020
+.org 0x80330F94                                            ;  04330F94
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80330F98                                            ;  04330F98
+  lbz     r0,0x1F00(r4)                                    ;v 88041F00
+.org 0x80330F9C                                            ;  04330F9C
+  cmpwi   r0,0x1                                           ;v 2C000001
+.org 0x80330FA0                                            ;  04330FA0
+  bne     TRK_MINNOW_DOLPHIN__TRKNubMainLoop_C8            ;v 4082000C
+.org 0x80330FA4                                            ;  04330FA4
+  lwz     r28,0x5B10(r3)                                   ;v 83835B10
+.org 0x80330FA8                                            ;  04330FA8
+  blr                                                      ;v 4E800020
+.org 0x80330FAC                                            ;  04330FAC
+  lwz     r28,0x3E9C(r4)                                   ;v 83843E9C
+.org 0x80330FB0                                            ;  04330FB0
+  blr                                                      ;v 4E800020
+.org 0x80330FB4                                            ;  04330FB4
+  lis     r3,-0x7FC1                                       ;v 3C60803F
+.org 0x80330FB8                                            ;  04330FB8
+  lbz     r0,0x1F00(r3)                                    ;v 88031F00
+.org 0x80330FBC                                            ;  04330FBC
+  cmpwi   r0,0x0                                           ;v 2C000000
+.org 0x80330FC0                                            ;  04330FC0
+  beqlr                                                    ;v 4D820020
+.org 0x80330FC4                                            ;  04330FC4
+  stw     r31,0x3E9C(r3)                                   ;v 93E33E9C
+.org 0x80330FC8                                            ;  04330FC8
+  blr                                                      ;v 4E800020
+.org 0x80330FCC                                            ;  04330FCC
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80330FD0                                            ;  04330FD0
+  lbz     r0,0x1F00(r4)                                    ;v 88041F00
+.org 0x80330FD4                                            ;  04330FD4
+  cmpwi   r0,0x2                                           ;v 2C000002
+.org 0x80330FD8                                            ;  04330FD8
+  bne     TRK_MINNOW_DOLPHIN__TRKDestructEvent_10          ;v 40820014
+.org 0x80330FDC                                            ;  04330FDC
+  lwz     r4,0x3E9C(r4)                                    ;v 80843E9C
+.org 0x80330FE0                                            ;  04330FE0
+  cmpw    r4,r3                                            ;v 7C041800
+.org 0x80330FE4                                            ;  04330FE4
+  bnelr                                                    ;v 4C820020
+.org 0x80330FE8                                            ;  04330FE8
+  b       d_camera__camera_draw                            ;v 4BE4B368
+.org 0x80330FEC                                            ;  04330FEC
+  lwz     r4,0x3E9C(r4)                                    ;v 80843E9C
+.org 0x80330FF0                                            ;  04330FF0
+  cmpw    r4,r3                                            ;v 7C041800
+.org 0x80330FF4                                            ;  04330FF4
+  beqlr                                                    ;v 4D820020
+.org 0x80330FF8                                            ;  04330FF8
+  b       d_camera__camera_draw                            ;v 4BE4B358
+.org 0x80330FFC                                            ;  04330FFC
+  lwz     r4,0x36C(r3)                                     ;v 8083036C
+.org 0x80331000                                            ;  04331000
+  cmpw    r29,r4                                           ;v 7C1D2000
+.org 0x80331004                                            ;  04331004
+  beq     TRK_MINNOW_DOLPHIN__TRKConstructEvent_10         ;v 4182000C
+.org 0x80331008                                            ;  04331008
+  lis     r3,-0x7FC1                                       ;v 3C60803F
+.org 0x8033100C                                            ;  0433100C
+  lwz     r3,0x3E9C(r3)                                    ;v 80633E9C
+.org 0x80331010                                            ;  04331010
+  lha     r3,0x2B0(r3)                                     ;v A86302B0
+.org 0x80331014                                            ;  04331014
+  blr                                                      ;v 4E800020
+.org 0x80331018                                            ;  04331018
+  mflr    r0                                               ;v 7C0802A6
+.org 0x8033101C                                            ;  0433101C
+  stw     r0,0x4(r1)                                       ;v 90010004
+.org 0x80331020                                            ;  04331020
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x80331024                                            ;  04331024
+  stmw    r27,0x8(r1)                                      ;v BF610008
+.org 0x80331028                                            ;  04331028
+  li      r27,0x0                                          ;v 3B600000
+.org 0x8033102C                                            ;  0433102C
+  mr      r31,r3                                           ;v 7C7F1B78
+.org 0x80331030                                            ;  04331030
+  mr      r30,r5                                           ;v 7CBE2B78
+.org 0x80331034                                            ;  04331034
+  mr      r29,r6                                           ;v 7CDD3378
+.org 0x80331038                                            ;  04331038
+  mr      r28,r4                                           ;v 7C9C2378
+.org 0x8033103C                                            ;  0433103C
+  bl      d_stage__dStage_playerInit                       ;v 4BD10AB9
+.org 0x80331040                                            ;  04331040
+  addi    r27,r27,0x1                                      ;v 3B7B0001
+.org 0x80331044                                            ;  04331044
+  cmpwi   r27,0x2                                          ;v 2C1B0002
+.org 0x80331048                                            ;  04331048
+  mr      r3,r31                                           ;v 7FE3FB78
+.org 0x8033104C                                            ;  0433104C
+  mr      r5,r30                                           ;v 7FC5F378
+.org 0x80331050                                            ;  04331050
+  mr      r6,r29                                           ;v 7FA6EB78
+.org 0x80331054                                            ;  04331054
+  mr      r4,r28                                           ;v 7F84E378
+.org 0x80331058                                            ;  04331058
+  bne     TRK_MINNOW_DOLPHIN__TRKPostEvent_24              ;v 4082FFE4
+.org 0x8033105C                                            ;  0433105C
+  lmw     r27,0x8(r1)                                      ;v BB610008
+.org 0x80331060                                            ;  04331060
+  addi    r1,r1,0x30                                       ;v 38210030
+.org 0x80331064                                            ;  04331064
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x80331068                                            ;  04331068
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x8033106C                                            ;  0433106C
+  blr                                                      ;v 4E800020
+.org 0x80331070                                            ;  04331070
+  li      r5,0x0                                           ;v 38A00000
+.org 0x80331074                                            ;  04331074
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80331078                                            ;  04331078
+  lwz     r3,0x3EA4(r4)                                    ;v 80643EA4
+.org 0x8033107C                                            ;  0433107C
+  lwz     r4,0x3EA0(r4)                                    ;v 80843EA0
+.org 0x80331080                                            ;  04331080
+  b       dAttention_c__dAttention_c                       ;v 4BD6C260
+.org 0x803310B8                                            ;  043310B8
+  mflr    r0                                               ;v 7C0802A6
+.org 0x803310BC                                            ;  043310BC
+  stw     r0,0x4(r1)                                       ;v 90010004
+.org 0x803310C0                                            ;  043310C0
+  stwu    r1,-0xC(r1)                                      ;v 9421FFF4
+.org 0x803310C4                                            ;  043310C4
+  bl      dAttention_c__Run                                ;v 4BD6E111
+.org 0x803310C8                                            ;  043310C8
+  lis     r3,-0x7FC1                                       ;v 3C60803F
+.org 0x803310CC                                            ;  043310CC
+  lwz     r3,0x3EA4(r3)                                    ;v 80633EA4
+.org 0x803310D0                                            ;  043310D0
+  li      r4,-0x1                                          ;v 3880FFFF
+.org 0x803310D4                                            ;  043310D4
+  bl      dAttention_c__Run                                ;v 4BD6E101
+.org 0x803310D8                                            ;  043310D8
+  addi    r1,r1,0xC                                        ;v 3821000C
+.org 0x803310DC                                            ;  043310DC
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x803310E0                                            ;  043310E0
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x803310E4                                            ;  043310E4
+  blr                                                      ;v 4E800020
+.org 0x803310E8                                            ;  043310E8
+  mflr    r0                                               ;v 7C0802A6
+.org 0x803310EC                                            ;  043310EC
+  stw     r0,0x4(r1)                                       ;v 90010004
+.org 0x803310F0                                            ;  043310F0
+  stwu    r1,-0xC(r1)                                      ;v 9421FFF4
+.org 0x803310F4                                            ;  043310F4
+  bl      dAttention_c__Draw                               ;v 4BD6E36D
+.org 0x803310F8                                            ;  043310F8
+  lis     r3,-0x7FC1                                       ;v 3C60803F
+.org 0x803310FC                                            ;  043310FC
+  lwz     r3,0x3EA4(r3)                                    ;v 80633EA4
+.org 0x80331100                                            ;  04331100
+  bl      dAttention_c__Draw                               ;v 4BD6E361
+.org 0x80331104                                            ;  04331104
+  addi    r1,r1,0xC                                        ;v 3821000C
+.org 0x80331108                                            ;  04331108
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x8033110C                                            ;  0433110C
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x80331110                                            ;  04331110
+  blr                                                      ;v 4E800020
+.org 0x80331114                                            ;  04331114
+  stw     r0,0x1C4(r3)                                     ;v 900301C4
+.org 0x80331118                                            ;  04331118
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x8033111C                                            ;  0433111C
+  lwz     r4,0x3EA0(r4)                                    ;v 80843EA0
+.org 0x80331120                                            ;  04331120
+  cmpw    r3,r4                                            ;v 7C032000
+.org 0x80331124                                            ;  04331124
+  beq     TRK_MINNOW_DOLPHIN__TRKGetNextEvent_40           ;v 41820014
+.org 0x80331128                                            ;  04331128
+  lwz     r0,0x1C4(r4)                                     ;v 800401C4
+.org 0x8033112C                                            ;  0433112C
+  ori     r0,r0,0x8000                                     ;v 60008000
+.org 0x80331130                                            ;  04331130
+  stw     r0,0x1C4(r4)                                     ;v 900401C4
+.org 0x80331134                                            ;  04331134
+  blr                                                      ;v 4E800020
+.org 0x80331138                                            ;  04331138
+  lwz     r4,0x18(r4)                                      ;v 80840018
+.org 0x8033113C                                            ;  0433113C
+  addi    r4,r4,-0x18                                      ;v 3884FFE8
+.org 0x80331140                                            ;  04331140
+  b       TRK_MINNOW_DOLPHIN__TRKGetNextEvent_30           ;v 4BFFFFE8
+.org 0x80331144                                            ;  04331144
+  lwz     r0,0x5B44(r4)                                    ;v 80045B44
+.org 0x80331148                                            ;  04331148
+  cmpwi   r0,0x0                                           ;v 2C000000
+.org 0x8033114C                                            ;  0433114C
+  bnelr                                                    ;v 4C820020
+.org 0x80331150                                            ;  04331150
+  stw     r31,0x5B44(r4)                                   ;v 93E45B44
+.org 0x80331154                                            ;  04331154
+  stw     r31,0x5B4C(r4)                                   ;v 93E45B4C
+.org 0x80331158                                            ;  04331158
+  blr                                                      ;v 4E800020
+.org 0x8033115C                                            ;  0433115C
+  lis     r6,-0x7FC1                                       ;v 3CC0803F
+.org 0x80331160                                            ;  04331160
+  lbz     r6,0x1F00(r6)                                    ;v 88C61F00
+.org 0x80331164                                            ;  04331164
+  cmpwi   r6,0x0                                           ;v 2C060000
+.org 0x80331168                                            ;  04331168
+  beqlr                                                    ;v 4D820020
+.org 0x8033116C                                            ;  0433116C
+  b       STControl__checkTrigger_28C                      ;v 4BD27460
+.org 0x80331170                                            ;  04331170
+  lwz     r0,0x1C(r1)                                      ;v 8001001C
+.org 0x80331174                                            ;  04331174
+  cmpwi   r0,0x1                                           ;v 2C000001
+.org 0x80331178                                            ;  04331178
+  beqlr                                                    ;v 4D820020
+.org 0x8033117C                                            ;  0433117C
+  b       f_op_msg_mng__fopMsgM_Create                     ;v 4BCFD088
+.org 0x80331180                                            ;  04331180
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80331184                                            ;  04331184
+  lbz     r0,0x1F00(r4)                                    ;v 88041F00
+.org 0x80331188                                            ;  04331188
+  cmpwi   r0,0x1                                           ;v 2C000001
+.org 0x8033118C                                            ;  0433118C
+  bne     TRK_MINNOW_DOLPHIN__TRKGetNextEvent_A0           ;v 4082000C
+.org 0x80331190                                            ;  04331190
+  lwz     r30,0x5B10(r3)                                   ;v 83C35B10
+.org 0x80331194                                            ;  04331194
+  blr                                                      ;v 4E800020
+.org 0x80331198                                            ;  04331198
+  lwz     r30,0x3E9C(r4)                                   ;v 83C43E9C
+.org 0x8033119C                                            ;  0433119C
+  blr                                                      ;v 4E800020
+.org 0x803311B4                                            ;  043311B4
+  mr      r31,r3                                           ;v 7C7F1B78
+.org 0x803311B8                                            ;  043311B8
+  lwz     r0,0x54(r1)                                      ;v 80010054
+.org 0x803311BC                                            ;  043311BC
+  lis     r6,-0x7FDD                                       ;v 3CC08023
+.org 0x803311C0                                            ;  043311C0
+  ori     r6,r6,0x5094                                     ;v 60C65094
+.org 0x803311C4                                            ;  043311C4
+  cmpw    r0,r6                                            ;v 7C003000
+.org 0x803311C8                                            ;  043311C8
+  lis     r6,-0x7FC6                                       ;v 3CC0803A
+.org 0x803311CC                                            ;  043311CC
+  ori     r6,r6,0x4DF0                                     ;v 60C64DF0
+.org 0x803311D0                                            ;  043311D0
+  bne     TRK_MINNOW_DOLPHIN__TRKInitializeEventQueue_2C   ;v 40820008
+.org 0x803311D4                                            ;  043311D4
+  addi    r6,r6,0x3C                                       ;v 38C6003C
+.org 0x803311D8                                            ;  043311D8
+  stw     r6,0x190(r31)                                    ;v 90DF0190
+.org 0x803311DC                                            ;  043311DC
+  blr                                                      ;v 4E800020
+.org 0x803311E4                                            ;  043311E4
+  lis     r4,-0x7FCD                                       ;v 3C808033
+.org 0x803311E8                                            ;  043311E8
+  lbz     r3,0x11E2(r4)                                    ;v 886411E2
+.org 0x803311EC                                            ;  043311EC
+  xori    r0,r3,0x1                                        ;v 68600001
+.org 0x803311F0                                            ;  043311F0
+  stb     r0,0x11E2(r4)                                    ;v 980411E2
+.org 0x803311F4                                            ;  043311F4
+  cmpwi   r3,0x1                                           ;v 2C030001
+.org 0x803311F8                                            ;  043311F8
+  addi    r3,r30,0x5808                                    ;v 387E5808
+.org 0x803311FC                                            ;  043311FC
+  bne     TRK_MINNOW_DOLPHIN__TRKTerminateNub              ;v 40820030
+.org 0x80331200                                            ;  04331200
+  mflr    r0                                               ;v 7C0802A6
+.org 0x80331204                                            ;  04331204
+  stw     r0,0x4(r1)                                       ;v 90010004
+.org 0x80331208                                            ;  04331208
+  stwu    r1,-0xC(r1)                                      ;v 9421FFF4
+.org 0x8033120C                                            ;  0433120C
+  li      r3,-0x4                                          ;v 3860FFFC
+.org 0x80331210                                            ;  04331210
+  li      r4,0x1A0                                         ;v 388001A0
+.org 0x80331214                                            ;  04331214
+  bl      cMl__memalignB                                   ;v 4BF100E5
+.org 0x80331218                                            ;  04331218
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x8033121C                                            ;  0433121C
+  stw     r3,0x3EA4(r4)                                    ;v 90643EA4
+.org 0x80331220                                            ;  04331220
+  addi    r1,r1,0xC                                        ;v 3821000C
+.org 0x80331224                                            ;  04331224
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x80331228                                            ;  04331228
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x8033122C                                            ;  0433122C
+  stw     r3,0x3480(r31)                                   ;v 907F3480
+.org 0x80331230                                            ;  04331230
+  blr                                                      ;v 4E800020
+.org 0x80331234                                            ;  04331234
+  addi    r31,r3,0x5808                                    ;v 3BE35808
+.org 0x80331238                                            ;  04331238
+  lwz     r0,0x128(r30)                                    ;v 801E0128
+.org 0x8033123C                                            ;  0433123C
+  lwz     r4,0x0(r31)                                      ;v 809F0000
+.org 0x80331240                                            ;  04331240
+  cmpw    r4,r0                                            ;v 7C040000
+.org 0x80331244                                            ;  04331244
+  beqlr                                                    ;v 4D820020
+.org 0x80331248                                            ;  04331248
+  lis     r31,-0x7FC1                                      ;v 3FE0803F
+.org 0x8033124C                                            ;  0433124C
+  lwz     r31,0x3EA4(r31)                                  ;v 83FF3EA4
+.org 0x80331250                                            ;  04331250
+  blr                                                      ;v 4E800020
+.org 0x80331254                                            ;  04331254
+  addi    r31,r31,0x5808                                   ;v 3BFF5808
+.org 0x80331258                                            ;  04331258
+  lwz     r0,0x128(r28)                                    ;v 801C0128
+.org 0x8033125C                                            ;  0433125C
+  lwz     r4,0x0(r31)                                      ;v 809F0000
+.org 0x80331260                                            ;  04331260
+  cmpw    r4,r0                                            ;v 7C040000
+.org 0x80331264                                            ;  04331264
+  beqlr                                                    ;v 4D820020
+.org 0x80331268                                            ;  04331268
+  lis     r31,-0x7FC1                                      ;v 3FE0803F
+.org 0x8033126C                                            ;  0433126C
+  lwz     r31,0x3EA4(r31)                                  ;v 83FF3EA4
+.org 0x80331270                                            ;  04331270
+  blr                                                      ;v 4E800020
+.org 0x80331274                                            ;  04331274
+  addi    r31,r29,0x5808                                   ;v 3BFD5808
+.org 0x80331278                                            ;  04331278
+  lwz     r0,0x128(r26)                                    ;v 801A0128
+.org 0x8033127C                                            ;  0433127C
+  lwz     r4,0x0(r31)                                      ;v 809F0000
+.org 0x80331280                                            ;  04331280
+  cmpw    r4,r0                                            ;v 7C040000
+.org 0x80331284                                            ;  04331284
+  beqlr                                                    ;v 4D820020
+.org 0x80331288                                            ;  04331288
+  lis     r31,-0x7FC1                                      ;v 3FE0803F
+.org 0x8033128C                                            ;  0433128C
+  lwz     r31,0x3EA4(r31)                                  ;v 83FF3EA4
+.org 0x80331290                                            ;  04331290
+  blr                                                      ;v 4E800020
+.org 0x80331294                                            ;  04331294
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80331298                                            ;  04331298
+  lwz     r0,0x3EA8(r4)                                    ;v 80043EA8
+.org 0x8033129C                                            ;  0433129C
+  cmpwi   r0,0x0                                           ;v 2C000000
+.org 0x803312A0                                            ;  043312A0
+  bnelr                                                    ;v 4C820020
+.org 0x803312A4                                            ;  043312A4
+  lbz     r0,0x1F00(r4)                                    ;v 88041F00
+.org 0x803312A8                                            ;  043312A8
+  cmpwi   r0,0x1                                           ;v 2C000001
+.org 0x803312AC                                            ;  043312AC
+  bne     TRK_MINNOW_DOLPHIN__TRKInitializeNub_6C          ;v 40820010
+.org 0x803312B0                                            ;  043312B0
+  li      r0,0x2                                           ;v 38000002
+.org 0x803312B4                                            ;  043312B4
+  stb     r0,0x1F00(r4)                                    ;v 98041F00
+.org 0x803312B8                                            ;  043312B8
+  b       m_Do_graphic__mDoGph_Painter_78                  ;v 4BCD9CEC
+.org 0x803312BC                                            ;  043312BC
+  li      r3,0x1                                           ;v 38600001
+.org 0x803312C0                                            ;  043312C0
+  stb     r3,0x1F00(r4)                                    ;v 98641F00
+.org 0x803312C4                                            ;  043312C4
+  blr                                                      ;v 4E800020
+.org 0x803312C8                                            ;  043312C8
+  li      r0,0x1                                           ;v 38000001
+.org 0x803312CC                                            ;  043312CC
+  lis     r9,-0x7FC1                                       ;v 3D20803F
+.org 0x803312D0                                            ;  043312D0
+  stw     r0,0x3EA8(r9)                                    ;v 90093EA8
+.org 0x803312D4                                            ;  043312D4
+  blr                                                      ;v 4E800020
+.org 0x803312D8                                            ;  043312D8
+  li      r0,0x0                                           ;v 38000000
+.org 0x803312DC                                            ;  043312DC
+  b       TRK_MINNOW_DOLPHIN__TRKInitializeNub_7C          ;v 4BFFFFF0
+.org 0x803312E0                                            ;  043312E0
+  mr      r30,r3                                           ;v 7C7E1B78
+.org 0x803312E4                                            ;  043312E4
+  lwz     r0,0x20(r30)                                     ;v 801E0020
+.org 0x803312E8                                            ;  043312E8
+  cmpwi   r0,0x0                                           ;v 2C000000
+.org 0x803312EC                                            ;  043312EC
+  bnelr                                                    ;v 4C820020
+.org 0x803312F0                                            ;  043312F0
+  b       daPy_lk_c__dProcGetItem_3E4                      ;v 4BDFD9A4
+.org 0x803312F4                                            ;  043312F4
+  lis     r6,-0x7FC3                                       ;v 3CC0803D
+.org 0x803312F8                                            ;  043312F8
+  lwz     r6,-0x58B4(r6)                                   ;v 80C6A74C
+.org 0x803312FC                                            ;  043312FC
+  cmpw    r4,r6                                            ;v 7C043000
+.org 0x80331300                                            ;  04331300
+  beq     TRK_MINNOW_DOLPHIN__TRKInitializeNub_BC          ;v 4182000C
+.org 0x80331304                                            ;  04331304
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x80331308                                            ;  04331308
+  b       fopAcM_searchActorDistance_4                     ;v 4BCF3FB8
+.org 0x8033130C                                            ;  0433130C
+  mflr    r0                                               ;v 7C0802A6
+.org 0x80331310                                            ;  04331310
+  stw     r0,0x4(r1)                                       ;v 90010004
+.org 0x80331314                                            ;  04331314
+  stwu    r1,-0x14(r1)                                     ;v 9421FFEC
+.org 0x80331318                                            ;  04331318
+  stw     r3,0x8(r1)                                       ;v 90610008
+.org 0x8033131C                                            ;  0433131C
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x80331320                                            ;  04331320
+  bl      fopAcM_searchActorDistance_4                     ;v 4BCF3FA1
+.org 0x80331324                                            ;  04331324
+  stfs    f1,0xC(r1)                                       ;v D021000C
+.org 0x80331328                                            ;  04331328
+  lwz     r3,0x8(r1)                                       ;v 80610008
+.org 0x8033132C                                            ;  0433132C
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80331330                                            ;  04331330
+  lwz     r4,0x3EA0(r4)                                    ;v 80843EA0
+.org 0x80331334                                            ;  04331334
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x80331338                                            ;  04331338
+  bl      fopAcM_searchActorDistance_4                     ;v 4BCF3F89
+.org 0x8033133C                                            ;  0433133C
+  lfs     f2,0xC(r1)                                       ;v C041000C
+.org 0x80331340                                            ;  04331340
+  fcmpo   cr0,f1,f2                                        ;v FC011040
+.org 0x80331344                                            ;  04331344
+  ble     TRK_MINNOW_DOLPHIN__TRKInitializeNub_FC          ;v 40810008
+.org 0x80331348                                            ;  04331348
+  fmr     f1,f2                                            ;v FC201090
+.org 0x8033134C                                            ;  0433134C
+  addi    r1,r1,0x14                                       ;v 38210014
+.org 0x80331350                                            ;  04331350
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x80331354                                            ;  04331354
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x80331358                                            ;  04331358
+  blr                                                      ;v 4E800020
+.org 0x8033135C                                            ;  0433135C
+  lis     r6,-0x7FC3                                       ;v 3CC0803D
+.org 0x80331360                                            ;  04331360
+  lwz     r6,-0x58B4(r6)                                   ;v 80C6A74C
+.org 0x80331364                                            ;  04331364
+  cmpw    r4,r6                                            ;v 7C043000
+.org 0x80331368                                            ;  04331368
+  beq     TRK_MINNOW_DOLPHIN__TRKInitializeNub_124         ;v 4182000C
+.org 0x8033136C                                            ;  0433136C
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x80331370                                            ;  04331370
+  b       fopAcM_searchActorDistanceXZ_4                   ;v 4BCF4054
+.org 0x80331374                                            ;  04331374
+  mflr    r0                                               ;v 7C0802A6
+.org 0x80331378                                            ;  04331378
+  stw     r0,0x4(r1)                                       ;v 90010004
+.org 0x8033137C                                            ;  0433137C
+  stwu    r1,-0x14(r1)                                     ;v 9421FFEC
+.org 0x80331380                                            ;  04331380
+  stw     r3,0x8(r1)                                       ;v 90610008
+.org 0x80331384                                            ;  04331384
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x80331388                                            ;  04331388
+  bl      fopAcM_searchActorDistanceXZ_4                   ;v 4BCF403D
+.org 0x8033138C                                            ;  0433138C
+  stfs    f1,0xC(r1)                                       ;v D021000C
+.org 0x80331390                                            ;  04331390
+  lwz     r3,0x8(r1)                                       ;v 80610008
+.org 0x80331394                                            ;  04331394
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x80331398                                            ;  04331398
+  lwz     r4,0x3EA0(r4)                                    ;v 80843EA0
+.org 0x8033139C                                            ;  0433139C
+  stwu    r1,-0x30(r1)                                     ;v 9421FFD0
+.org 0x803313A0                                            ;  043313A0
+  bl      fopAcM_searchActorDistanceXZ_4                   ;v 4BCF4025
+.org 0x803313A4                                            ;  043313A4
+  lfs     f2,0xC(r1)                                       ;v C041000C
+.org 0x803313A8                                            ;  043313A8
+  fcmpo   cr0,f1,f2                                        ;v FC011040
+.org 0x803313AC                                            ;  043313AC
+  ble     TRK_MINNOW_DOLPHIN__TRKMessageSend_30            ;v 40810008
+.org 0x803313B0                                            ;  043313B0
+  fmr     f1,f2                                            ;v FC201090
+.org 0x803313B4                                            ;  043313B4
+  addi    r1,r1,0x14                                       ;v 38210014
+.org 0x803313B8                                            ;  043313B8
+  lwz     r0,0x4(r1)                                       ;v 80010004
+.org 0x803313BC                                            ;  043313BC
+  mtlr    r0                                               ;v 7C0803A6
+.org 0x803313C0                                            ;  043313C0
+  blr                                                      ;v 4E800020
+.org 0x803313C4                                            ;  043313C4
+  lis     r6,-0x7FC3                                       ;v 3CC0803D
+.org 0x803313C8                                            ;  043313C8
+  lwz     r6,-0x58B4(r6)                                   ;v 80C6A74C
+.org 0x803313CC                                            ;  043313CC
+  cmpw    r4,r6                                            ;v 7C043000
+.org 0x803313D0                                            ;  043313D0
+  beq     TRK_MINNOW_DOLPHIN__TRKMessageSend_58            ;v 4182000C
+.org 0x803313D4                                            ;  043313D4
+  addi    r4,r4,0x1F8                                      ;v 388401F8
+.org 0x803313D8                                            ;  043313D8
+  blr                                                      ;v 4E800020
+.org 0x803313DC                                            ;  043313DC
+  lfs     f1,0x0(r3)                                       ;v C0230000
+.org 0x803313E0                                            ;  043313E0
+  lfs     f2,0x0(r3)                                       ;v C0430000
+.org 0x803313E4                                            ;  043313E4
+  lis     r6,-0x7FCB                                       ;v 3CC08035
+.org 0x803313E8                                            ;  043313E8
+  lfs     f0,-0x448(r6)                                    ;v C006FBB8
+.org 0x803313EC                                            ;  043313EC
+  lfs     f3,0x1F8(r4)                                     ;v C06401F8
+.org 0x803313F0                                            ;  043313F0
+  lfs     f4,0x200(r4)                                     ;v C0840200
+.org 0x803313F4                                            ;  043313F4
+  fsubs   f3,f3,f1                                         ;v EC630828
+.org 0x803313F8                                            ;  043313F8
+  fsubs   f4,f4,f2                                         ;v EC841028
+.org 0x803313FC                                            ;  043313FC
+  fcmpo   cr0,f3,f0                                        ;v FC030040
+.org 0x80331400                                            ;  04331400
+  bge     TRK_MINNOW_DOLPHIN__TRKMessageSend_84            ;v 40800008
+.org 0x80331404                                            ;  04331404
+  fneg    f3,f3                                            ;v FC601850
+.org 0x80331408                                            ;  04331408
+  fcmpo   cr0,f4,f0                                        ;v FC040040
+.org 0x8033140C                                            ;  0433140C
+  bge     TRK_MINNOW_DOLPHIN__TRKMessageSend_90            ;v 40800008
+.org 0x80331410                                            ;  04331410
+  fneg    f4,f4                                            ;v FC802050
+.org 0x80331414                                            ;  04331414
+  fadds   f5,f3,f4                                         ;v ECA3202A
+.org 0x80331418                                            ;  04331418
+  lis     r5,-0x7FC1                                       ;v 3CA0803F
+.org 0x8033141C                                            ;  0433141C
+  lwz     r5,0x3EA0(r5)                                    ;v 80A53EA0
+.org 0x80331420                                            ;  04331420
+  lfs     f3,0x1F8(r5)                                     ;v C06501F8
+.org 0x80331424                                            ;  04331424
+  lfs     f4,0x200(r5)                                     ;v C0850200
+.org 0x80331428                                            ;  04331428
+  fsubs   f3,f3,f1                                         ;v EC630828
+.org 0x8033142C                                            ;  0433142C
+  fsubs   f4,f4,f2                                         ;v EC841028
+.org 0x80331430                                            ;  04331430
+  fcmpo   cr0,f3,f0                                        ;v FC030040
+.org 0x80331434                                            ;  04331434
+  bge     TRK_MINNOW_DOLPHIN__TRKMessageSend_B8            ;v 40800008
+.org 0x80331438                                            ;  04331438
+  fneg    f3,f3                                            ;v FC601850
+.org 0x8033143C                                            ;  0433143C
+  fcmpo   cr0,f4,f0                                        ;v FC040040
+.org 0x80331440                                            ;  04331440
+  bge     TRK_MINNOW_DOLPHIN__TRKMessageSend_C4            ;v 40800008
+.org 0x80331444                                            ;  04331444
+  fneg    f4,f4                                            ;v FC802050
+.org 0x80331448                                            ;  04331448
+  fadds   f6,f3,f4                                         ;v ECC3202A
+.org 0x8033144C                                            ;  0433144C
+  fcmpo   cr0,f6,f5                                        ;v FC062840
+.org 0x80331450                                            ;  04331450
+  ble     TRK_MINNOW_DOLPHIN__TRKMessageSend_D8            ;v 4081000C
+.org 0x80331454                                            ;  04331454
+  addi    r4,r4,0x1F8                                      ;v 388401F8
+.org 0x80331458                                            ;  04331458
+  blr                                                      ;v 4E800020
+.org 0x8033145C                                            ;  0433145C
+  addi    r4,r5,0x1F8                                      ;v 388501F8
+.org 0x80331460                                            ;  04331460
+  blr                                                      ;v 4E800020
+.org 0x803314A8                                            ;  043314A8
+  lis     r6,-0x7FC1                                       ;v 3CC0803F
+.org 0x803314AC                                            ;  043314AC
+  lwz     r6,0x3EA0(r6)                                    ;v 80C63EA0
+.org 0x803314B0                                            ;  043314B0
+  cmpw    r6,r31                                           ;v 7C06F800
+.org 0x803314B4                                            ;  043314B4
+  bne     TRK_MINNOW_DOLPHIN__TRKMessageSend_140           ;v 40820010
+.org 0x803314B8                                            ;  043314B8
+  lwz     r0,0x0(r4)                                       ;v 80040000
+.org 0x803314BC                                            ;  043314BC
+  stw     r0,0x8(r4)                                       ;v 90040008
+.org 0x803314C0                                            ;  043314C0
+  addi    r4,r4,0x8                                        ;v 38840008
+.org 0x803314C4                                            ;  043314C4
+  b       J3DDrawBuffer__entryImm                          ;v 4BFBB800
+.org 0x803314D8                                            ;  043314D8
+  lwz     r4,0x4C28(r30)                                   ;v 809E4C28
+.org 0x803314DC                                            ;  043314DC
+  lbz     r0,0x30(r4)                                      ;v 88040030
+.org 0x803314E0                                            ;  043314E0
+  cmpwi   r0,0x26                                          ;v 2C000026
+.org 0x803314E4                                            ;  043314E4
+  bnelr                                                    ;v 4C820020
+.org 0x803314E8                                            ;  043314E8
+  lis     r4,-0x7FC1                                       ;v 3C80803F
+.org 0x803314EC                                            ;  043314EC
+  lwz     r4,0x3EA0(r4)                                    ;v 80843EA0
+.org 0x803314F0                                            ;  043314F0
+  cmpw    r4,r30                                           ;v 7C04F000
+.org 0x803314F4                                            ;  043314F4
+  bne     TRK_MINNOW_DOLPHIN__TRKMessageSend_17C           ;v 4082000C
+.org 0x803314F8                                            ;  043314F8
+  lis     r4,-0x7FC3                                       ;v 3C80803D
+.org 0x803314FC                                            ;  043314FC
+  lwz     r4,-0x58AC(r4)                                   ;v 8084A754
+.org 0x80331500                                            ;  04331500
+  lwz     r0,0x1F8(r4)                                     ;v 800401F8
+.org 0x80331504                                            ;  04331504
+  stw     r0,0x1F8(r30)                                    ;v 901E01F8
+.org 0x80331508                                            ;  04331508
+  lwz     r0,0x200(r4)                                     ;v 80040200
+.org 0x8033150C                                            ;  0433150C
+  stw     r0,0x200(r30)                                    ;v 901E0200
+.org 0x80331510                                            ;  04331510
+  lfs     f0,0x1FC(r3)                                     ;v C00301FC
+.org 0x80331514                                            ;  04331514
+  lfs     f1,-0x7FFC(r2)                                   ;v C0228004
+.org 0x80331518                                            ;  04331518
+  fadds   f0,f0,f1                                         ;v EC00082A
+.org 0x8033151C                                            ;  0433151C
+  stfs    f0,0x1FC(r30)                                    ;v D01E01FC
+.org 0x80331520                                            ;  04331520
+  blr                                                      ;v 4E800020
+.org 0x80331524                                            ;  04331524
+  lis     r5,-0x7FC1                                       ;v 3CA0803F
+.org 0x80331528                                            ;  04331528
+  lwz     r0,0x3EA8(r5)                                    ;v 80053EA8
+.org 0x8033152C                                            ;  0433152C
+  cmpwi   r0,0x0                                           ;v 2C000000
+.org 0x80331530                                            ;  04331530
+  bne     TRK_MINNOW_DOLPHIN__TRKMessageSend_1CC           ;v 40820020
+.org 0x80331534                                            ;  04331534
+  lbz     r0,0x1F00(r5)                                    ;v 88051F00
+.org 0x80331538                                            ;  04331538
+  cmpwi   r0,0x1                                           ;v 2C000001
+.org 0x8033153C                                            ;  0433153C
+  blt     TRK_MINNOW_DOLPHIN__TRKMessageSend_1CC           ;v 41800014
+.org 0x80331540                                            ;  04331540
+  lfs     f0,-0x7F78(r2)                                   ;v C0028088
+.org 0x80331544                                            ;  04331544
+  fdivs   f4,f4,f0                                         ;v EC840024
+.org 0x80331548                                            ;  04331548
+  bgt     TRK_MINNOW_DOLPHIN__TRKMessageSend_1CC           ;v 41810008
+.org 0x8033154C                                            ;  0433154C
+  fadds   f2,f2,f4                                         ;v EC42202A
+.org 0x80331550                                            ;  04331550
+  mflr    r0                                               ;v 7C0802A6
+.org 0x80331554                                            ;  04331554
+  b       gx__GXSetViewportJitter_4                        ;v 4BFF5B74
+.org 0x80375250                                            ;  04375250
+  .long   0x80331018                                       ;v 80331018
+.org 0x8038FD9C                                            ;  0438FD9C
+  .long   0x4C38                                           ;v 00004C38
+.org 0x80390F28                                            ;  04390F28
+  .long   0x80330FCC                                       ;v 80330FCC
+.org 0x80390F3C                                            ;  04390F3C
+  .long   0x9E0                                            ;v 000009E0
+.org 0x803A2800                                            ;  043A2800
+  .long   0x43A00000                                       ;v 43A00000
+.org 0x803A2804                                            ;  043A2804
+  .long   0xC3700000                                       ;v C3700000
+.org 0x803A2808                                            ;  043A2808
+  .long   0x4B800000                                       ;v 4B800000
+.org 0x803A280C                                            ;  043A280C
+  .long   0x44258000                                       ;v 44258000
+.org 0x803A2810                                            ;  043A2810
+  .long   0x44118000                                       ;v 44118000
+.org 0x803A2814                                            ;  043A2814
+  .long   0x4B800000                                       ;v 4B800000
+.org 0x803A2818                                            ;  043A2818
+  .long   0x43A00000                                       ;v 43A00000
+.org 0x803A281C                                            ;  043A281C
+  .long   0xC2F00000                                       ;v C2F00000
+.org 0x803A2820                                            ;  043A2820
+  .long   0x4B800000                                       ;v 4B800000
+.org 0x803A2824                                            ;  043A2824
+  .long   0x44258000                                       ;v 44258000
+.org 0x803A2828                                            ;  043A2828
+  .long   0x43E80000                                       ;v 43E80000
+.org 0x803A282C                                            ;  043A282C
+  .long   0x4B800000                                       ;v 4B800000
+.org 0x803A2830                                            ;  043A2830
+  .long   0x43A00000                                       ;v 43A00000
+.org 0x803A2834                                            ;  043A2834
+  .long   0xC2E60000                                       ;v C2E60000
+.org 0x803A2838                                            ;  043A2838
+  .long   0x4B800000                                       ;v 4B800000
+.org 0x803A283C                                            ;  043A283C
+  .long   0x44258000                                       ;v 44258000
+.org 0x803A2840                                            ;  043A2840
+  .long   0x442F0000                                       ;v 442F0000
+.org 0x803A2844                                            ;  043A2844
+  .long   0x4B800000                                       ;v 4B800000
+.close

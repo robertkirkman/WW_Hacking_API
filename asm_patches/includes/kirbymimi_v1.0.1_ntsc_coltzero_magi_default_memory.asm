@@ -1,4 +1,4 @@
-; v1.0.1 by KirbyMIMI NTSC translation by Colt Zero updated by magi 10/25/21
+; v1.0.1 by KirbyMIMI NTSC translation by Colt Zero updated by magi 10/29/21
 ;	Assembly		                                                AR Code
 .open "sys/main.dol"
 
@@ -35,10 +35,19 @@
 .org 0x8000BC1C                                            ;  0400BC1C
   bl      TRK_MINNOW_DOLPHIN__TRKInitializeNub_44          ;v 48325679
 
-;    m_Do_machine__fault_callback_scroll + 0x61C
+;    m_Do_machine__mDoMch_Create + 0xB4
+;    uncomment the below two lines for expanded memory
+;.org 0x8000C7C0                                            ;  0400C7C0
+;  nop                                                      ;v 60000000
+;    m_Do_machine__mDoMch_Create + 0x13C
+;    uncomment the below two lines for expanded memory
+;.org 0x8000C848                                            ;  0400C848
+;  lis r0, 0x6C                                             ;v 3C00006C
+;    m_Do_machine__mDoMch_Create + 0x2D0
+;    comment the below two lines for expanded memory
 .org 0x8000C9DC                                            ;  0400C9DC
   lis     r3,0x9A                                          ;v 3C60009A
-;    m_Do_machine__fault_callback_scroll + 0x62C
+;    m_Do_machine__mDoMch_Create + 0x2E0
 .org 0x8000C9EC                                            ;  0400C9EC
   lis     r3,0x37                                          ;v 3C600037
 

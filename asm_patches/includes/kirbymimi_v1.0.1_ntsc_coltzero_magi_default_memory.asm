@@ -1,4 +1,4 @@
-; v1.0.1 by KirbyMIMI NTSC translation by Colt Zero updated by magi 10/8/21
+; v1.0.1 by KirbyMIMI NTSC translation by Colt Zero updated by magi 10/25/21
 ;	Assembly		                                                AR Code
 .open "sys/main.dol"
 
@@ -791,9 +791,13 @@
   mflr    r0                                               ;v 7C0802A6
   b       gx__GXSetViewportJitter_4                        ;v 4BFF5B74
 
+;    d_stage__l_funcTable$5322 + 0x2C
+.org 0x803750DC                                            ;  043750DC
+  .long   0x80331018      ; TRKPostEvent orig: d_stage__dStage_playerInit ;v 80331018
+
 ;    d_stage__l_funcTable$5327 + 0x8
 .org 0x80375250                                            ;  04375250
-  .long   0x80331018                                       ;v 80331018
+  .long   0x80331018      ; TRKPostEvent orig: d_stage__dStage_playerInit ;v 80331018
 
 ;    d_a_player_main__g_profile_PLAYER + 0x10
 .org 0x8038FD9C                                            ;  0438FD9C
